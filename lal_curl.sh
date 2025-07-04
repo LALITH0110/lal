@@ -560,10 +560,24 @@ if [ -z "$PROMPT" ]; then
 fi
 
 # Check for API keys
-if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
-    echo -e "${RED}❌ No API keys found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY${NC}"
-    exit 1
-fi
+    if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+        echo -e "${RED}❌ No API keys found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY${NC}"
+        echo ""
+        echo "To set up your API key:"
+        echo "1. Get an API key from:"
+        echo "   • Anthropic: https://console.anthropic.com/"
+        echo "   
+        echo ""
+        echo "2. Set it in your terminal:"
+        echo "   export ANTHROPIC_API_KEY=\"your-key-here\""
+        echo ""
+        echo "3. For permanent use, add to your shell config:"
+        echo "   echo 'export ANTHROPIC_API_KEY=\"your-key-here\"' >> ~/.zshrc"
+        echo "   source ~/.zshrc"
+        echo ""
+        echo "For more details, run: lal --config"
+        exit 1
+    fi
 
 # Generate command
 echo -e "${YELLOW}Thinking...${NC}"
