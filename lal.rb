@@ -2,7 +2,7 @@ class Lal < Formula
   desc "Natural Language to Shell Commands using AI"
   homepage "https://github.com/lalith0110/lal"
   url "https://github.com/lalith0110/lal/archive/v1.0.0.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "bf8e6ae3b9cc356e0142a89b35ca822c39f72a17e60f2e6e35da90fe37f8102e"
   license "MIT"
   
   depends_on "curl"
